@@ -287,26 +287,6 @@ const skillObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.skill-card').forEach(card => skillObserver.observe(card));
 
-/* ---- TESTIMONIAL SLIDER ---- */
-let currentSlide = 0;
-const slides = document.querySelectorAll('.testimonial-slide');
-const dots = document.querySelectorAll('.test-dot');
-
-function goToSlide(n) {
-  slides[currentSlide]?.classList.remove('active');
-  dots[currentSlide]?.classList.remove('active');
-  currentSlide = (n + slides.length) % slides.length;
-  slides[currentSlide]?.classList.add('active');
-  dots[currentSlide]?.classList.add('active');
-}
-
-document.getElementById('testNext')?.addEventListener('click', () => goToSlide(currentSlide + 1));
-document.getElementById('testPrev')?.addEventListener('click', () => goToSlide(currentSlide - 1));
-
-dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
-
-// Auto-advance
-setInterval(() => goToSlide(currentSlide + 1), 5000);
 
 /* ---- CONTACT FORM ---- */
 const form = document.getElementById('contactForm');
