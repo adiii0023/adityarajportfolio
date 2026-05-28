@@ -388,3 +388,40 @@ document.querySelectorAll('.timeline-dot').forEach(dot => {
 
 console.log('%c Aditya Raj Portfolio ', 'background:#00d9ff;color:#000;font-family:monospace;font-size:14px;font-weight:bold;padding:4px 8px;');
 console.log('%c Digital Marketing Executive | Delhi NCR ', 'color:#00d9ff;font-family:monospace;font-size:11px;');
+
+
+/* ==========================================================
+   EXPERIENCE SHOWCASE HOVER EFFECT
+========================================================== */
+
+document.querySelectorAll('.work-showcase-card').forEach(card => {
+
+  card.addEventListener('mousemove', (e) => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / 25);
+    const rotateY = ((centerX - x) / 25);
+
+    card.style.transform =
+      `perspective(1000px)
+       rotateX(${rotateX}deg)
+       rotateY(${rotateY}deg)
+       translateY(-10px)`;
+
+  });
+
+  card.addEventListener('mouseleave', () => {
+
+    card.style.transform =
+      'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+
+  });
+
+});
