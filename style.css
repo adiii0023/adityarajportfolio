@@ -918,80 +918,152 @@ section {
 /* ============================================================
    PROJECTS SECTION
    ============================================================ */
-.company-projects-wrapper {
+/* ==========================================================
+   EXPERIENCE SHOWCASE SECTION
+========================================================== */
+
+#experience-showcase {
+  background: var(--black);
+  padding: 110px 0;
+  position: relative;
 }
 
-.company-project-header {
-  margin-bottom: 30px;
-}
-
-.company-project-header h3 {
-  font-size: 32px;
-  color: #fff;
-  margin-bottom: 10px;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.company-project-header span {
-  color: #00d9ff;
-  font-size: 15px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.company-project-gallery {
+.experience-showcase-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 35px;
+  margin-top: 70px;
 }
 
-.project-image-box {
+.work-showcase-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: 0.5s ease;
+  position: relative;
+  backdrop-filter: blur(15px);
+}
+
+.work-showcase-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--blue);
+  box-shadow: 0 0 40px rgba(0,217,255,0.15);
+}
+
+.showcase-image {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
   height: 260px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: #111;
 }
 
-.project-image-box img {
+.showcase-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 0.5s ease;
+  transition: 0.7s ease;
 }
 
-.project-image-box:hover img {
+.work-showcase-card:hover .showcase-image img {
   transform: scale(1.08);
 }
 
-.project-image-box::after {
-  content: '';
+.showcase-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.45), transparent);
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.2)
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: 0.5s ease;
 }
 
-@media(max-width: 992px) {
+.work-showcase-card:hover .showcase-overlay {
+  opacity: 1;
+}
 
-  .company-project-gallery {
-    grid-template-columns: repeat(2, 1fr);
+.showcase-btn {
+  padding: 12px 24px;
+  background: var(--blue);
+  color: #000;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.4s ease;
+}
+
+.showcase-btn:hover {
+  transform: scale(1.08);
+}
+
+.showcase-content {
+  padding: 30px;
+}
+
+.company-label {
+  color: var(--blue);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.showcase-content h3 {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-family: var(--font-display);
+}
+
+.showcase-content p {
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.showcase-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.showcase-tags span {
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: rgba(0,217,255,0.08);
+  border: 1px solid rgba(0,217,255,0.15);
+  color: var(--blue);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 992px){
+
+  .experience-showcase-grid{
+    grid-template-columns: repeat(2,1fr);
   }
 
 }
 
-@media(max-width: 768px) {
+@media(max-width: 768px){
 
-  .company-project-gallery {
+  .experience-showcase-grid{
     grid-template-columns: 1fr;
   }
 
-  .company-project-header h3 {
+  .showcase-content h3{
     font-size: 24px;
-  }
-
-  .project-image-box {
-    height: 220px;
   }
 
 }
