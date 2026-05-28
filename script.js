@@ -192,9 +192,9 @@ const roles = [
   'Digital Marketing Executive',
   'SEO Specialist',
   'Google Ads Expert',
-  'Meta Ads Specialist',
-  'WordPress Developer',
-  'Brand Growth Strategist'
+  'Meta Ads Expert',
+  'WordPress Expert',
+  'Growth Strategist'
 ];
 let roleIndex = 0;
 let charIndex = 0;
