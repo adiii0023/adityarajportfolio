@@ -2,6 +2,15 @@
    ADITYA RAJ PORTFOLIO — style.css
    Dark Metallic Futuristic Premium UI
    ============================================================ */
+.loader-logo{
+    width:130px;
+    height:auto;
+    object-fit:contain;
+    filter:
+        drop-shadow(0 0 10px #00d9ff)
+        drop-shadow(0 0 20px rgba(0,217,255,.5));
+}
+
 
 /* ---- CSS VARIABLES ---- */
 :root {
